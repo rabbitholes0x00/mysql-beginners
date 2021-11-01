@@ -28,4 +28,6 @@ lorem ipsum dolor sit amet
 ## MySQL, Important Concepts
 lorem ipsum dolor sit amet
 
-## MySQL, Learning Sites
+## MySQL, Tutorials
+* [How Long Does It Take to Learn SQL? Top Tips for SQL Proficiency](https://learnsql.com/blog/how-long-does-it-take-to-learn-sql)
+* [We Can Do Better Than SQL](https://www.edgedb.com/blog/we-can-do-better-than-sql)
