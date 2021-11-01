@@ -1,0 +1,32 @@
+@backup
+mysqldump [OPTIONS] namadatabase > filebackup.sql
+mysqldump -u root -p namadb > hasilbackup.sql
+sudo mysqldump -u root -p website_belajarlinux > backup_website_belajarlinux.sql
+
+@restore
+sudo mysql -u root -p website_baru < backup_website_belajarlinux.sql
+
+@backup-compress
+mysqldump -u username -p blog_linux | gzip -9 > blog_linux.sql.gz
+
+@restore-compress
+zcat blog_linux.sql.gz | mysql -u username -p blog_linux
+
+@backup-from-client
+sudo mysqldump -h "113.34.1.14" -u root -p website_belajarlinux > backup_website_belajarlinux.sql
+
+@restore-from-client
+sudo mysql -h  "113.34.1.14" -u root -p website_belajarlinux <  backup_website_belajarlinux.sql
+
+@backup-multiple-db
+sudo mysqldump -u root -p --databases website1 website2 aplikasi_db > backup_db.sql
+
+@restore-all-db
+sudo mysqldump -u root -p --all-databases > all_databases.sql
+
+@backup-one-db-from-all-db
+mysql --one-database aplikasi_db < all_databases.sql
+
+@automatic-backup
+sudo echo $(crontab -l ; echo '0 03 * * * mysqldump -u root -pPASSWORDKAMU --all-databases > ~/all_databases.sql') | crontab -
+
